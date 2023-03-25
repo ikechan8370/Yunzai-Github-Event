@@ -1,0 +1,72 @@
+.container {
+    width: 900px;
+    padding: 20px 15px 10px 15px;
+    background-color: #f5f6fb;
+}
+.head_box {
+    border-radius: 15px;
+    font-family: tttgbnumber;
+    padding: 10px 20px;
+    position: relative;
+    box-shadow: 0 5px 10px 0 rgb(0 0 0 / 15%);
+}
+
+.head_box .id_text {
+    font-size: 24px;
+}
+.head_box .day_text {
+    font-size: 20px;
+}
+.head_box .github {
+    position: absolute;
+    top: 12px;
+    right: 15px;
+    width: 50px;
+}
+
+.general {
+    width: 100%;
+    margin: auto;
+    display: flex;
+}
+
+.repoIcon {
+    width: 60px;
+    margin-top: 20px;
+    margin-right: 20px;
+}
+.pr-content {
+    width: 100%;
+    margin: auto;
+}
+.pr-header {
+    margin-bottom: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #1d39c4;
+}
+.pr-title {
+    margin-bottom: 10px;
+    font-size: 18px;
+    font-weight: bold;
+}
+.pr-body {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+.pr-author {
+    color: #0a1720;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+.pr-action {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.logo {
+    font-size: 14px;
+    font-family: "tttgbnumber";
+    text-align: center;
+    color: #7994a7;
+}

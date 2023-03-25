@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="{{pluResPath}}github/pr/index.css" />
+    <link rel="shortcut icon" href="#" />
+</head>
+{{@headStyle}}
+
+<body>
+<div class="container" id="container">
+    <div class="head_box">
+        <div class="id_text">Github-Plugin</div>
+        <h2 class="day_text">Pull Request 通知 {{time}}</h2>
+        <img class="github" src="{{pluResPath}}img/icon/github.png"/>
+    </div>
+    <div class="general">
+        <div>
+            <img class="repoIcon" src="{{repoAvatar}}" />
+        </div>
+        <div>
+            <h3>{{repoName}}</h3>
+            <h5>{{description}}</h5>
+        </div>
+    </div>
+
+    <div class="pr-content">
+        <div class="pr-header">
+            Pull Request 内容
+        </div>
+        <div class="pr-title">
+            标题：{{title}} ({{prUrl}})
+        </div>
+        <div class="pr-author">
+            发起者：@{{user}} <img src="{{userAvatar}}" style="width: 16px">
+        </div>
+        <div class="pr-body">
+            内容：{{body}}
+        </div>
+        <div class="pr-action">
+            {{ merged }}
+        </div>
+    </div>
+
+    <div class="logo">Created By Yunzai-Bot and Github-Plugin</div>
+</div>
+</body>
+
+</html>

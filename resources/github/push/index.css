@@ -1,0 +1,51 @@
+.container {
+    width: 900px;
+    padding: 20px 15px 10px 15px;
+    background-color: #f5f6fb;
+}
+.head_box {
+    border-radius: 15px;
+    font-family: tttgbnumber;
+    padding: 10px 20px;
+    position: relative;
+    box-shadow: 0 5px 10px 0 rgb(0 0 0 / 15%);
+}
+
+.head_box .id_text {
+    font-size: 24px;
+}
+.head_box .day_text {
+    font-size: 20px;
+}
+.head_box .github {
+    position: absolute;
+    top: 12px;
+    right: 15px;
+    width: 50px;
+}
+
+.general {
+    width: 100%;
+    margin: auto;
+    display: flex;
+}
+
+.repoIcon {
+    width: 60px;
+    margin-top: 20px;
+    margin-right: 20px;
+}
+
+.commits {
+    width: 100%;
+}
+.commit {
+    margin-bottom: 10px;
+}
+
+.logo {
+    font-size: 14px;
+    font-family: "tttgbnumber";
+    text-align: center;
+    color: #7994a7;
+}
