@@ -58,7 +58,7 @@ async function handleEvent (payload, event) {
       const issueUrl = payload.issue.html_url
       const user = payload.issue.user
       const title = payload.issue.title
-      const body = payload.issue.title
+      const body = payload.issue.body
       let stateReason
       switch (payload.action) {
         case 'opened': {
