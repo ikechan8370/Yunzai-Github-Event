@@ -4,6 +4,8 @@ import { formatDate, getMasterQQ, render } from './utils/common.js'
 const secret = ''
 const repos = ['']
 const port = 59008
+const sendMaster = true
+const sendGroups = []
 const server = http.createServer((req, res) => {
   if (req.method === 'POST' && req.url === '/github-webhook') {
     let body = ''
@@ -81,8 +83,15 @@ async function handleEvent (payload, event) {
         body,
         stateReason
       }, { retType: 'base64' })
-      Bot.sendPrivateMsg(master, res).catch((err) => {
-        logger.error(err)
+      if (sendMaster) {
+        Bot.sendPrivateMsg(master, res).catch((err) => {
+          logger.error(err)
+        })
+      }
+      sendGroups.forEach(gId => {
+        Bot.sendGroupMsg(gId, res).catch((err) => {
+          logger.error(err)
+        })
       })
       break
     }
@@ -117,8 +126,15 @@ async function handleEvent (payload, event) {
         closed_at,
         merged: merged_at ? `merged by ${mergedBy} at ${merged_at}` : undefined
       }, { retType: 'base64' })
-      Bot.sendPrivateMsg(master, res).catch((err) => {
-        logger.error(err)
+      if (sendMaster) {
+        Bot.sendPrivateMsg(master, res).catch((err) => {
+          logger.error(err)
+        })
+      }
+      sendGroups.forEach(gId => {
+        Bot.sendGroupMsg(gId, res).catch((err) => {
+          logger.error(err)
+        })
       })
       break
     }
@@ -137,8 +153,15 @@ async function handleEvent (payload, event) {
         pusherName: name,
         commits
       }, { retType: 'base64' })
-      Bot.sendPrivateMsg(master, res).catch((err) => {
-        logger.error(err)
+      if (sendMaster) {
+        Bot.sendPrivateMsg(master, res).catch((err) => {
+          logger.error(err)
+        })
+      }
+      sendGroups.forEach(gId => {
+        Bot.sendGroupMsg(gId, res).catch((err) => {
+          logger.error(err)
+        })
       })
     }
   }
