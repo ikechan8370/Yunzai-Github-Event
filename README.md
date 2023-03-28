@@ -13,5 +13,8 @@ Just Kidding！😂
 git clone https://github.com/ikechan8370/Yunzai-Github-Event.git .\plugins\github
 ```
 
+然后添加一个webhook，大概是`http://[ip]:[端口号默认59008]/github-webhook`
+
+根据情况选是所有事件还是只有push
 
 别的自己看吧！
