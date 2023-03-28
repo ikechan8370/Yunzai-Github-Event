@@ -15,6 +15,9 @@ git clone https://github.com/ikechan8370/Yunzai-Github-Event.git .\plugins\githu
 
 然后添加一个webhook，大概是`http://[ip]:[端口号默认59008]/github-webhook`
 
+<img width="1148" alt="image" src="https://user-images.githubusercontent.com/21212372/228236286-24384e83-aded-4fcc-ba61-1e1eb241aaa1.png">
+
+
 根据情况选是所有事件还是只有push
 
 别的自己看吧！
