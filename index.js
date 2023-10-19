@@ -53,6 +53,11 @@ async function handleEvent (payload, event) {
   // const branch = payload.ref.split('/')[2]
   const repoAvatar = payload.repository.owner.avatar_url
   const description = payload.repository.description
+  let bot = Bot
+  if (typeof bot.sendPrivateMsg !== 'function') {
+    // trss 暂时选择第一个bot吧
+    bot = Bot[0]
+  }
   switch (event) {
     case 'issues': {
       const issueUrl = payload.issue.html_url
@@ -83,11 +88,7 @@ async function handleEvent (payload, event) {
         body,
         stateReason
       }, { retType: 'base64' })
-      let bot = Bot
-      if (typeof bot.sendPrivateMsg !== 'function') {
-        // trss 暂时选择第一个bot吧
-        bot = Bot[0]
-      }
+      
       if (sendMaster) {
         bot.sendPrivateMsg(master, res).catch((err) => {
           logger.error(err)
@@ -132,12 +133,12 @@ async function handleEvent (payload, event) {
         merged: merged_at ? `merged by ${mergedBy} at ${merged_at}` : undefined
       }, { retType: 'base64' })
       if (sendMaster) {
-        Bot.sendPrivateMsg(master, res).catch((err) => {
+        bot.sendPrivateMsg(master, res).catch((err) => {
           logger.error(err)
         })
       }
       sendGroups.forEach(gId => {
-        Bot.sendGroupMsg(gId, res).catch((err) => {
+        bot.sendGroupMsg(gId, res).catch((err) => {
           logger.error(err)
         })
       })
@@ -159,12 +160,12 @@ async function handleEvent (payload, event) {
         commits
       }, { retType: 'base64' })
       if (sendMaster) {
-        Bot.sendPrivateMsg(master, res).catch((err) => {
+        bot.sendPrivateMsg(master, res).catch((err) => {
           logger.error(err)
         })
       }
       sendGroups.forEach(gId => {
-        Bot.sendGroupMsg(gId, res).catch((err) => {
+        bot.sendGroupMsg(gId, res).catch((err) => {
           logger.error(err)
         })
       })
