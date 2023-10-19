@@ -83,13 +83,18 @@ async function handleEvent (payload, event) {
         body,
         stateReason
       }, { retType: 'base64' })
+      let bot = Bot
+      if (typeof bot.sendPrivateMsg !== 'function') {
+        // trss 暂时选择第一个bot吧
+        bot = Bot[0]
+      }
       if (sendMaster) {
-        Bot.sendPrivateMsg(master, res).catch((err) => {
+        bot.sendPrivateMsg(master, res).catch((err) => {
           logger.error(err)
         })
       }
       sendGroups.forEach(gId => {
-        Bot.sendGroupMsg(gId, res).catch((err) => {
+        bot.sendGroupMsg(gId, res).catch((err) => {
           logger.error(err)
         })
       })
