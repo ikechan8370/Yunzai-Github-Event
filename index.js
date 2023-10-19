@@ -1,6 +1,6 @@
 import http from 'http'
 import crypto from 'crypto'
-import common from '../../lib/common.js'
+import common from '../../lib/common/common.js'
 import { formatDate, getMasterQQ, render } from './utils/common.js'
 const secret = ''
 const repos = ['']
