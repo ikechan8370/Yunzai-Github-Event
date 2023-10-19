@@ -92,7 +92,7 @@ async function handleEvent (payload, event) {
         })
       }
       sendGroups.forEach(gId => {
-        Bot.pickGroup(gId).sendGroupMsg(res).catch((err) => {
+        Bot.pickGroup(gId).sendMsg(res).catch((err) => {
           logger.error(err)
         })
       })
@@ -135,7 +135,7 @@ async function handleEvent (payload, event) {
         })
       }
       sendGroups.forEach(gId => {
-        Bot.pickGroup(gId).sendGroupMsg(res).catch((err) => {
+        Bot.pickGroup(gId).sendMsg(res).catch((err) => {
           logger.error(err)
         })
       })
@@ -162,7 +162,7 @@ async function handleEvent (payload, event) {
         })
       }
       sendGroups.forEach(gId => {
-        Bot.pickGroup(gId).sendGroupMsg(res).catch((err) => {
+        Bot.pickGroup(gId).sendMsg(res).catch((err) => {
           logger.error(err)
         })
       })
