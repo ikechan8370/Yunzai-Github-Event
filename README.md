@@ -11,7 +11,7 @@ github event plugin for Yunzai
 git clone https://github.com/ikechan8370/Yunzai-Github-Event.git .\plugins\github
 ```
 
-然后添加一个webhook，大概是`http://[ip]:[端口号默认59008]/github-webhook`
+然后添加一个webhook，大概是`http://[ip]:[端口号默认59009]/github-webhook`
 
 <img width="1148" alt="image" src="https://user-images.githubusercontent.com/21212372/228236286-24384e83-aded-4fcc-ba61-1e1eb241aaa1.png">
 
